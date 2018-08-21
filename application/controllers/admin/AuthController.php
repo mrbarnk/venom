@@ -1,6 +1,6 @@
 <?php
 
-class VenomAuth extends CI_Controller {
+class AuthController extends CI_Controller {
 
 
 /* Method for creating administrator credentials */

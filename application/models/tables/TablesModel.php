@@ -1,6 +1,6 @@
 <?php
 
-class VenomTables extends CI_Model
+class TablesModel extends CI_Model
 {
 
 public function generate() {

@@ -52,17 +52,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //#########################
 //INSTALLER ROUTES
-$route['installer/run'] = 'installation/VenomInstall/run';
+$route['installer/run'] = 'installation/InstallController/run';
 
 //#########################
 //ADMIN INDEX PAGE
-$route['venom/index'] = 'admin/VenomAdministrator/index';
+$route['venom/index'] = 'admin/AdminController/index';
 
-$route['admin/logout'] = 'admin/VenomAuth/admin_logout';
+$route['admin/logout'] = 'admin/AuthController/admin_logout';
 
-$route['admin/login'] = 'admin/VenomAuth/admin_login';
+$route['admin/login'] = 'admin/AuthController/admin_login';
 
-$route['admin/create'] = 'admin/VenomAuth/create_admin';
+$route['admin/create'] = 'admin/AuthController/create_admin';
 
 
 $route['404_override'] = '';

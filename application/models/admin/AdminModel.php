@@ -1,6 +1,6 @@
 <?php
 
-class VenomAdminModel extends CI_Model {
+class AdminModel extends CI_Model {
 	
 //administrator login
 public function admin_is_valid($email, $password){

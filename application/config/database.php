@@ -76,10 +76,10 @@ $query_builder = TRUE;
 
 $db['development'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '127.0.0.1',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'kobo',
+	'database' => 'venom',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'ven_',
 	'pconnect' => FALSE,

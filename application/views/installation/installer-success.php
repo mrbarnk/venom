@@ -19,7 +19,7 @@ $this->table->set_heading('Table Name', 'Status', 'Remark');
 
 foreach ( $all_tables as $table ):
 
-$this->table->add_row( $table, in_array($table, $required_tables) ? '<i class="fa fa-check"></i>' : '', 'perfect!');
+$this->table->add_row( $table, in_array($table, $required_tables) ? '<i class="badge badge-success">created</i>' : '', (in_array($table, $required_tables) ? '<i class="badge badge-warning">perfect</i>' : ''));
 
 endforeach;
 

@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('tables/VenomTables' => 'tables_model', 'general/VenomGeneralModel' => 'general_model','admin/VenomAdminModel' => 'admin_model','user/VenomUserModel' => 'user_model');
+$autoload['model'] = array('tables/TablesModel' => 'tables_model', 'general/GeneralModel' => 'general_model','admin/AdminModel' => 'admin_model','user/UserModel' => 'user_model');
