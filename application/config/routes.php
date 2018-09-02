@@ -64,6 +64,10 @@ $route['admin/login'] = 'admin/AuthController/admin_login';
 
 $route['admin/create'] = 'admin/AuthController/create_admin';
 
+$route['themes/manage'] = 'admin/ThemeController/manage_themes';
+
+
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

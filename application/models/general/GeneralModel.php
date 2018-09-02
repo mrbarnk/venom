@@ -12,7 +12,7 @@ $this->load->database();
 
 
 //this is a general method that counts total table records
-public function count_table_records($table_name){
+public function ven_count_table_records($table_name){
 
 return $this->db->count_all($table_name);
 }
@@ -20,7 +20,7 @@ return $this->db->count_all($table_name);
 //DB INSERT OPERATIONS
 
 ## this is a general method for ALL data insert operations ##
-public function insert_db_data( $table_name, $data ){
+public function ven_insert_data( $table_name, $data ){
 	
 /* @param $table_name = name of table where insert operation should be carried out. @param $data = the information that should be inserted */
 
@@ -32,7 +32,7 @@ $this->db->insert($table_name, $data);
 //DB REPLACE OPERATIONS
 
 ## this is a general method for ALL data UPDATE operations ##
-public function replace_db_data( $table_name, $data ){
+public function ven_replace_data( $table_name, $data ){
 	
 /* @param $table_name = name of table where UPDATE operation should be carried out. @param $data = the information that should be inserted */
 
@@ -44,7 +44,7 @@ $this->db->replace($table_name, $data);
 //DB UPDATE OPERATIONS
 
 ## this is a general method for ALL data UPDATE operations ##
-public function update_db_data( $table_name, $data ){
+public function ven_update_data( $table_name, $data ){
 	
 /* @param $table_name = name of table where update operation should be carried out. @param $data = the information that should be updated */
 
@@ -54,7 +54,7 @@ $this->db->update($table_name, $data);
 
 
 ## this is a general method for ALL SPECIFIC data UPDATE operations ##
-public function update_db_data_where( $table_name, $data, $condition){
+public function ven_update_data_where( $table_name, $data, $condition){
 	
 /* @param $table_name = name of table where update operation should be carried out. @param $data = the SPECIFIC information that should be updated. @condition = the condition for updating*/
 
@@ -64,7 +64,7 @@ $this->db->update($table_name, $data);
 }
 
 ## this is a general method for ALL data DELETION operations ##
-public function delete_db_data( $table_name, $where ){
+public function ven_delete_data( $table_name, $where ){
 
 $this->db->where($where);
 $this->db->delete($table_name);
@@ -75,7 +75,7 @@ $this->db->delete($table_name);
 //DB SELECT OPERATIONS
 
 ## this is a general method for ALL data selection operations and pagination ##
-public function select_db_data_paginate($table_name, $array_attributes){
+public function ven_select_data_paginate($table_name, $array_attributes){
 
 //pagination configuration
 //configuration details for pagination
@@ -114,7 +114,7 @@ return $result;
 
 
 ## this is a general method for ALL data selection operations without pagination##
-public function select_db_data($table_name){
+public function ven_select_data($table_name){
 	
 $query = $this->db->get($table_name);
 
@@ -127,7 +127,7 @@ return $result;
 
 
 ## this is a general method for ALL row data selection operations ##
-public function select_db_row($table_name){
+public function ven_select_row($table_name){
 	
 $query = $this->db->get($table_name);
 
@@ -140,7 +140,7 @@ return $result;
 
 ## this is a general method for BASIC SPECIFIC data selection operations ##
 
-public function select_db_data_where($table_name, $where){
+public function ven_select_data_where($table_name, $where){
 
 $this->db->where($where);
 
@@ -155,7 +155,7 @@ return $result;
 
 ## this is a general method for BASIC SPECIFIC ROW data selection operations ##
 
-public function select_db_row_where($table_name, $where){
+public function ven_select_row_where($table_name, $where){
 
 $this->db->where($where);
 

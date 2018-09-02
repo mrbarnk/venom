@@ -1,7 +1,8 @@
-<div class="card mb-3">
-  <div class="card-header bg-success text-white text-center">
-  <h5>HURRAY! INSTALLATION WAS SUCCESSFULL!</h5>
-   </div>	
+<div class="panel">
+<div class="panel-heading header-green">
+                            <h5>ADMINISTRATOR LOGIN!</h5>
+                        </div>
+                   <div class="panel-body">
 
 <?php
 echo form_open('admin/login');
@@ -22,6 +23,8 @@ Password </label>
 
 
 </div>
-<div class='text-right'><button class='badge badge-sm badge-warning btn-primary text-secondary'>Current Version: 1.0 Penza</button></div> 
-<div class="card-footer text-left">Fill in your authentication details and hit login... <input type='submit' value='LOGIN!' class='btn btn-sm btn-success'></div>
+<div class='text-right'><button class='btn btn-sm btn-danger'>Current Version: 1.0 Penza</button></div> 
+<div class="panel-footer text-left">Fill in your authentication details and hit login... <input type='submit' value='LOGIN!' class='btn btn-sm btn-success'></div>
+
+</form>
           </div>

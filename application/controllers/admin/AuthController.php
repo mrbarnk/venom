@@ -27,7 +27,7 @@ array
 (
 'field' => 'admin_password',
 'label' => 'Administrator Password',
-'rules' => 'trim|required|min_length[12]',
+'rules' => 'trim|required|min_length[6]',
 'errors' => array('required' => 'Provide a STRONG password that will be used for authentication', 'min_length' => 'The password you provided is TOO weak! Use any combination of at least 12 characters that you can easily remember.')
 ),
 
@@ -48,11 +48,11 @@ if ($this->form_validation->run() == FALSE ) :
 
 $this->load->view('admin/head', $data);
 
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
 
-$this->load->view('admin/create-admin', $data);
+$this->load->view('admin/installation/create-admin', $data);
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
 
 else :
 
@@ -74,11 +74,11 @@ $this->tables_model->update_admin_auth($data);
 
 $this->load->view('admin/head', $data);
 
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
 
-$this->load->view('installation/congratulations');
+$this->load->view('admin/installation/congratulations');
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
 
 endif;
 }
@@ -88,7 +88,7 @@ endif;
 public function admin_login()
 {
 
-$data['title'] = 'Administrator Login';
+$data['title'] = 'admin/Administrator Login';
 	
 // login validation rules
 
@@ -119,11 +119,11 @@ if ( $this->form_validation->run() == FALSE ) :
 
 $this->load->view('admin/head', $data);
 
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
 
 $this->load->view('admin/admin-login');
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
 
 else :
 
@@ -138,11 +138,11 @@ $data['invalid_credentials'] = 'Invalid Login Email Address Or Password! Try Aga
 
 $this->load->view('admin/head', $data);
 
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
 
 $this->load->view('admin/admin-login', $data);
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
 
 else :
 

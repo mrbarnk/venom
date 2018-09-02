@@ -243,6 +243,88 @@ $this->dbforge->add_key('settings_id', TRUE);
 
 $query .=  $this->dbforge->create_table('venom_settings', TRUE);
 
+
+/*** This is a table declaration that will store all information pertaining to themes such as theme name, theme author, theme description, etc.
+***/
+
+$admin_table_fields = array 
+(
+ 'theme_id'
+     => array
+     (
+ 'type' => 'INT',
+ 'constraint' => 5,
+ 'auto_increment' => TRUE,
+ 'unsigned' => TRUE
+     ),
+
+// theme name specified by theme developer
+ 'theme_name'
+     => array
+  (
+  'type' => 'VARCHAR',
+  'constraint' => '200',
+  'default' => 'venom'
+   ),
+
+// theme author name
+  'theme_author'
+     => array
+  (
+  'type' => 'VARCHAR',
+  'constraint' => '200'
+   ),
+
+// theme website
+  'theme_website'
+     => array
+   (
+  'type' => 'VARCHAR',
+  'constraint' => '200',
+  'default' => 'venom'
+   ),
+
+// theme author
+  'theme_description'
+     => array
+    (
+     'type' => 'TEXT'
+    ),
+
+// theme screenshot image
+  'theme_image'
+     => array
+     (
+     'type' => 'VARCHAR',
+     'constraint' => '200',
+     'default' => '/images/default_theme.png',
+     ),
+
+// theme version
+  'theme_version'
+     => array
+  (
+  'type' => 'VARCHAR',
+  'constraint' => '200'
+   ),
+
+// theme status
+  'theme_status'
+     => array
+  (
+  'type' => 'VARCHAR',
+  'constraint' => '100',
+  'default' => 'inactive'
+   ),
+);
+
+		
+$this->dbforge->add_field($admin_table_fields);
+
+$this->dbforge->add_key('theme_id', TRUE);
+
+$query .=  $this->dbforge->create_table('venom_themes', TRUE);
+
 return $query;
 	}
 
@@ -283,10 +365,10 @@ $default_admin_data = array
 /*** ONLY insert default admin data if it has not been previously inserted. This is necessary in order to avoid run time error in case the administrator reruns the script installer ***/
 
 // query administrator table to see if any values are present. If table contains values, it means script was previously installed
-$result = $this->general_model->select_db_data('venom_administrator');
+$result = $this->general_model->ven_select_data('venom_administrator');
 
 (count($result) <= 0) ?
-$this->general_model->replace_db_data('venom_administrator', $default_admin_data) : "";
+$this->general_model->ven_replace_data('venom_administrator', $default_admin_data) : "";
 
 
 /* If some of these default setting values are seen when admin logs in, then the installation process went wrongly */
@@ -335,10 +417,10 @@ $default_settings = array
 query settings table to see if any values are present. If table contains values, it means script was previously installed
 */ 
 
-$result = $this->general_model->select_db_data('venom_settings');
+$result = $this->general_model->ven_select_data('venom_settings');
 
 (count($result) <= 0) ?
-$this->general_model->replace_db_data('venom_settings', $default_settings) : "";
+$this->general_model->ven_replace_data('venom_settings', $default_settings) : "";
 
 }
 
@@ -349,7 +431,7 @@ public function update_admin_auth($data) {
 
 /* @param is the new admin authentication details that were supplied after installation completed */
 
-$this->general_model->update_db_data('venom_administrator', $data);
+$this->general_model->ven_update_data('venom_administrator', $data);
 
 }
 	

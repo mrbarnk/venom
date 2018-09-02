@@ -24,11 +24,11 @@ if ( $this->db->database == NULL ) :
 
 $this->load->view('admin/head', $data);
  
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
  
-$this->load->view('installation/no-db-name');
+$this->load->view('admin/installation/no-db-name');
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
  
 else :
 
@@ -53,6 +53,8 @@ $this->db->dbprefix('venom_administrator'),
 
 $this->db->dbprefix('venom_settings'),
 
+$this->db->dbprefix('venom_themes'),
+
 /*** your tables come here
 
 $this->db->dbprefix('venom_your_table_name')
@@ -67,11 +69,11 @@ $tables['all_tables'] = ( $generate_tables == TRUE ) ? $this->db->list_tables() 
 
 $this->load->view('admin/head', $data);
  
-$this->load->view('installation/header');
+$this->load->view('admin/installation/header');
  
-$this->load->view('installation/installer-success', $tables);
+$this->load->view('admin/installation/installer-success', $tables);
 
-$this->load->view('installation/footer');
+$this->load->view('admin/installation/footer');
  
 /* invoke the default portal settings and insert them into the  venom_settings table */
 
